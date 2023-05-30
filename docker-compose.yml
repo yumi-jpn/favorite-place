@@ -1,0 +1,13 @@
+version: '3'
+services:
+  node:
+    build:
+      context: .
+    tty: true
+    environment:
+      - NODE_ENV=production
+    volumes:
+    - ./:/usr/src/app
+    command: sh -c "cd favorite-place && yarn start"
+    ports:
+    - "8082:8080"
